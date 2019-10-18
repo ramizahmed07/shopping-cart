@@ -22,31 +22,29 @@ const CardListItem = () => {
           {cards &&
             cards.map(card => {
               if (sizes.length > 0) {
-                for (let key in sizes) {
-                  if (card.size === sizes[key]) {
-                    return (
-                      <Col sm='3' key={card.id}>
-                        <Card>
-                          <CardImg
-                            className='card-img'
-                            top
-                            src={card.imageUrl}
-                            alt='Card image cap'
-                          />
-                          <CardBody className='card-body'>
-                            <CardTitle className='card-title'>
-                              {card.title}
-                            </CardTitle>
-                            <CardSubtitle className='card-subtitle'></CardSubtitle>
-                            <CardText className='card-txt'>
-                              $ {card.cost}
-                            </CardText>
-                            <button className='card-btn'>Add to cart</button>
-                          </CardBody>
-                        </Card>
-                      </Col>
-                    );
-                  }
+                if (sizes.includes(card.size)) {
+                  return (
+                    <Col sm='3' key={card.id}>
+                      <Card>
+                        <CardImg
+                          className='card-img'
+                          top
+                          src={card.imageUrl}
+                          alt='Card image cap'
+                        />
+                        <CardBody className='card-body'>
+                          <CardTitle className='card-title'>
+                            {card.title}
+                          </CardTitle>
+                          <CardSubtitle className='card-subtitle'></CardSubtitle>
+                          <CardText className='card-txt'>
+                            $ {card.cost}
+                          </CardText>
+                          <button className='card-btn'>Add to cart</button>
+                        </CardBody>
+                      </Card>
+                    </Col>
+                  );
                 }
               } else {
                 return (

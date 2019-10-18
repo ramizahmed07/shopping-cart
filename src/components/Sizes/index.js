@@ -1,44 +1,145 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
+import { Button } from 'reactstrap';
+
 import { CardContext } from '../../context/CardContext';
+import './index.css';
 
 const Sizes = () => {
   const { setSizes } = useContext(CardContext);
-  const handleChange = e => {
-    if (e.target.checked) {
-      setSizes(e.target.value);
+  const [cSelected, setCSelected] = useState([]);
+
+  const onCheckboxBtnClick = selected => {
+    const index = cSelected.indexOf(selected);
+    if (index < 0) {
+      cSelected.push(selected);
+    } else {
+      cSelected.splice(index, 1);
     }
+    setCSelected([...cSelected]);
+    setSizes(cSelected);
   };
 
   return (
     <Fragment>
       <div>
         <label>
-          <input type='checkbox' value='xs' onChange={e => handleChange(e)} />
-          <span>xs</span>
+          <Button
+            className='size-button'
+            color='primary'
+            onClick={() => onCheckboxBtnClick('xs')}
+            active={cSelected.includes('xs')}
+          ></Button>
+          <span
+            className={
+              cSelected.includes('xs')
+                ? 'checkbox-styles checked'
+                : 'checkbox-styles'
+            }
+          >
+            xs
+          </span>
         </label>
         <label>
-          <input type='checkbox' value='s' onChange={e => handleChange(e)} />
-          <span>s</span>
+          <Button
+            className='size-button'
+            color='primary'
+            onClick={() => onCheckboxBtnClick('s')}
+            active={cSelected.includes('s')}
+          ></Button>
+          <span
+            className={
+              cSelected.includes('s')
+                ? 'checkbox-styles checked'
+                : 'checkbox-styles'
+            }
+          >
+            s
+          </span>
         </label>
         <label>
-          <input type='checkbox' value='m' onChange={e => handleChange(e)} />
-          <span>m</span>
+          <Button
+            className='size-button'
+            color='primary'
+            onClick={() => onCheckboxBtnClick('m')}
+            active={cSelected.includes('m')}
+          ></Button>
+          <span
+            className={
+              cSelected.includes('m')
+                ? 'checkbox-styles checked'
+                : 'checkbox-styles'
+            }
+          >
+            m
+          </span>
         </label>
         <label>
-          <input type='checkbox' value='ml' onChange={e => handleChange(e)} />
-          <span>ml</span>
+          <Button
+            className='size-button'
+            color='primary'
+            onClick={() => onCheckboxBtnClick('ml')}
+            active={cSelected.includes('ml')}
+          ></Button>
+          <span
+            className={
+              cSelected.includes('ml')
+                ? 'checkbox-styles checked'
+                : 'checkbox-styles'
+            }
+          >
+            ml
+          </span>
         </label>
         <label>
-          <input type='checkbox' value='l' onChange={e => handleChange(e)} />
-          <span>l</span>
+          <Button
+            className='size-button'
+            color='primary'
+            onClick={() => onCheckboxBtnClick('l')}
+            active={cSelected.includes('l')}
+          ></Button>
+          <span
+            className={
+              cSelected.includes('l')
+                ? 'checkbox-styles checked'
+                : 'checkbox-styles'
+            }
+          >
+            l
+          </span>
         </label>
         <label>
-          <input type='checkbox' value='xl' onChange={e => handleChange(e)} />
-          <span>xl</span>
+          <Button
+            className='size-button'
+            color='primary'
+            onClick={() => onCheckboxBtnClick('xl')}
+            active={cSelected.includes('xl')}
+          ></Button>
+          <span
+            className={
+              cSelected.includes('xl')
+                ? 'checkbox-styles checked'
+                : 'checkbox-styles'
+            }
+          >
+            xl
+          </span>
         </label>
         <label>
-          <input type='checkbox' value='xxl' onChange={e => handleChange(e)} />
-          <span>xxl</span>
+          <Button
+            className='size-button'
+            color='primary'
+            onClick={() => onCheckboxBtnClick('xxl')}
+            active={cSelected.includes('xxl')}
+          ></Button>
+          <span
+            className={
+              cSelected.includes('xxl')
+                ? 'checkbox-styles checked'
+                : 'checkbox-styles'
+            }
+          >
+            xxl
+          </span>
         </label>
       </div>
     </Fragment>

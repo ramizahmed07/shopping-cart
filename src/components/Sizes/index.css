@@ -1,15 +1,32 @@
 label {
-  position: relative;
-  z-index: -1;
+  margin-right: 5px;
 }
 
-label::after {
-  content: '';
+.size-button {
   position: absolute;
-  z-index: 99999;
-  width: 50px;
-  height: 50px;
-  display: block;
-  background: black;
-  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.checked {
+  background: #1b1a20 !important;
+  color: #ececec !important;
+}
+
+.checkbox-styles {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  font-size: 8px;
+  border-radius: 100%;
+  line-height: 35px;
+  text-align: center;
+  color: #1b1a20;
+  background-color: #ececec;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+}
+
+label span:hover {
+  border: 1px solid #1b1a20;
 }

@@ -163,6 +163,14 @@ class CardContextProvider extends Component {
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 10.9,
+        size: 'xs',
+        id: uuid(),
+        imageUrl:
+          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+      },
+      {
+        title: 'Cat Tee Black T-Shirt',
+        cost: 10.9,
         size: 'xxl',
         id: uuid(),
         imageUrl:
@@ -188,18 +196,16 @@ class CardContextProvider extends Component {
   };
 
   setSizes = size => {
-    const sizes = [...this.state.sizes];
-    sizes.push(size);
     let length = 0;
     this.state.data.map(card => {
-      for (let key in sizes) {
-        if (card.size === sizes[key]) {
+      for (let key in size) {
+        if (card.size === size[key]) {
           length++;
         }
       }
     });
     this.setState({
-      sizes,
+      sizes: size,
       length
     });
   };
