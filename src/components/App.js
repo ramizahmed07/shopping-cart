@@ -3,7 +3,8 @@ import { Container, Row, Col } from 'reactstrap';
 
 import CardListItem from './CardListItem';
 import { CardContext } from '../context/CardContext';
-import Sizes from './Sizes';
+import Sizes from './filter/Sizes';
+import Prices from './filter/Prices';
 
 const App = () => {
   const { cards, length } = useContext(CardContext);
@@ -14,13 +15,15 @@ const App = () => {
         <Col className='header' sm='2'>
           <span className='size'>Sizes:</span>
         </Col>
-        <Col className='header' sm='8'>
+        <Col style={{ textAlign: 'left' }} className='header' sm='5'>
           <span className='products'>
             {length > 0 ? length : cards.length} Product(s) found
           </span>
         </Col>
-        <Col className='header' sm='2'>
-          <span className='order-by'>Order by</span>
+        <Col style={{ textAlign: 'right' }} className='header' sm='5'>
+          <span className='order-by'>
+            <Prices />
+          </span>
         </Col>
       </Row>
       <Row noGutters>

@@ -1,8 +1,8 @@
 import React, { Fragment, useContext, useState } from 'react';
 import { Button } from 'reactstrap';
 
-import { CardContext } from '../../context/CardContext';
 import './index.css';
+import { CardContext } from '../../../context/CardContext';
 
 const Sizes = ({ setLoading }) => {
   const { setSizes } = useContext(CardContext);

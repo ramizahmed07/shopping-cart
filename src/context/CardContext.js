@@ -8,66 +8,61 @@ class CardContextProvider extends Component {
     sizes: [],
     length: null,
     loading: false,
+
     data: [
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 30.9,
         size: 's',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/12064273040195392_1.jpg'
+        imageUrl: '/assets/1.jpg'
       },
       {
         title: 'Sphynx Tie Dye Wine T-Shirt ',
-        cost: 10.9,
+        cost: 15.9,
         size: 's',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/51498472915966370_1.jpg'
+        imageUrl: '/assets/2.jpg'
       },
       {
         title: 'dfsdfsd dsfsd',
-        cost: 10.9,
+        cost: 56.0,
         size: 's',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: 'assets/3.jpg'
       },
       {
         title: 'dfdsfd sfsfds sdf',
         cost: 10.9,
         size: 's',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/11033926921508488_1.jpg'
+        imageUrl: '/assets/4.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 15.89,
+        size: 'xl',
+        imageUrl: '/assets/1.jpg',
+
+        id: uuid()
+      },
+      {
+        title: 'Cat Tee Black T-Shirt',
+        cost: 6.6,
         size: 'xl',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/6.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 4.5,
         size: 'xl',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/7.jpeg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
-        size: 'xl',
-        id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
-      },
-      {
-        title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 27.3,
         size: 'l',
         id: uuid(),
         imageUrl:
@@ -75,7 +70,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 19.2,
         size: 'l',
         id: uuid(),
         imageUrl:
@@ -83,7 +78,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 31.2,
         size: 'l',
         id: uuid(),
         imageUrl:
@@ -91,7 +86,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 77.7,
         size: 'm',
         id: uuid(),
         imageUrl:
@@ -99,7 +94,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 55.3,
         size: 'm',
         id: uuid(),
         imageUrl:
@@ -107,7 +102,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 34.2,
         size: 'm',
         id: uuid(),
         imageUrl:
@@ -115,7 +110,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 97.3,
         size: 'ml',
         id: uuid(),
         imageUrl:
@@ -123,7 +118,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 150.3,
         size: 'ml',
         id: uuid(),
         imageUrl:
@@ -131,7 +126,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 20.3,
         size: 'ml',
         id: uuid(),
         imageUrl:
@@ -139,7 +134,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 34.3,
         size: 'xs',
         id: uuid(),
         imageUrl:
@@ -147,7 +142,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 36.3,
         size: 'xs',
         id: uuid(),
         imageUrl:
@@ -155,7 +150,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 55.3,
         size: 'xs',
         id: uuid(),
         imageUrl:
@@ -163,7 +158,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 3.2,
         size: 'xs',
         id: uuid(),
         imageUrl:
@@ -171,7 +166,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 8.3,
         size: 'xxl',
         id: uuid(),
         imageUrl:
@@ -179,7 +174,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 5.3,
         size: 'xxl',
         id: uuid(),
         imageUrl:
@@ -187,7 +182,7 @@ class CardContextProvider extends Component {
       },
       {
         title: 'Cat Tee Black T-Shirt',
-        cost: 10.9,
+        cost: 4.2,
         size: 'xxl',
         id: uuid(),
         imageUrl:
@@ -196,13 +191,23 @@ class CardContextProvider extends Component {
     ]
   };
 
+  setOrderedData = type => {
+    if (type === 'ascending') {
+      this.setState({
+        data: this.state.data.sort((a, b) => a.cost - b.cost)
+      });
+    } else {
+      this.setState({
+        data: this.state.data.sort((a, b) => b.cost - a.cost)
+      });
+    }
+  };
+
   setSizes = size => {
     let length = 0;
     this.state.data.map(card => {
-      for (let key in size) {
-        if (card.size === size[key]) {
-          length++;
-        }
+      if (size.includes(card.size)) {
+        length++;
       }
     });
     this.setState({
@@ -212,13 +217,15 @@ class CardContextProvider extends Component {
   };
 
   render() {
+    console.log(this.state.data);
     return (
       <CardContext.Provider
         value={{
           cards: this.state.data,
           setSizes: this.setSizes,
           sizes: this.state.sizes,
-          length: this.state.length
+          length: this.state.length,
+          setOrderedData: this.setOrderedData
         }}
       >
         {this.props.children}

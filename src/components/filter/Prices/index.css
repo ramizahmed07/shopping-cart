@@ -1,0 +1,29 @@
+.order {
+  margin-right: 15px;
+}
+
+.drop-down-toggle,
+.drop-down-menu,
+.drop-down {
+  width: 200px;
+}
+
+.drop-down-toggle {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.drop-down {
+  display: inline-block;
+  color: white;
+  border: 1px solid black;
+}
+
+.drop-down-item {
+  transition: all 0.3s;
+}
+
+.drop-down-item:hover {
+  background: black !important;
+  color: white !important;
+}
