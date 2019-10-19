@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 import CardListItem from './CardListItem';
@@ -7,6 +7,7 @@ import Sizes from './Sizes';
 
 const App = () => {
   const { cards, length } = useContext(CardContext);
+  const [loading, setLoading] = useState(false);
   return (
     <Container style={{ marginTop: '100px' }}>
       <Row>
@@ -24,10 +25,10 @@ const App = () => {
       </Row>
       <Row noGutters>
         <Col sm='2'>
-          <Sizes />
+          <Sizes setLoading={setLoading} />
         </Col>
         <Col sm='10'>
-          <CardListItem />
+          <CardListItem loading={loading} setLoading={setLoading} />
         </Col>
       </Row>
     </Container>

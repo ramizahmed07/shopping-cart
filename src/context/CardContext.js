@@ -7,6 +7,7 @@ class CardContextProvider extends Component {
   state = {
     sizes: [],
     length: null,
+    loading: false,
     data: [
       {
         title: 'Cat Tee Black T-Shirt',

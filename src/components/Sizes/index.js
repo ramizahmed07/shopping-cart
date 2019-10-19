@@ -4,7 +4,7 @@ import { Button } from 'reactstrap';
 import { CardContext } from '../../context/CardContext';
 import './index.css';
 
-const Sizes = () => {
+const Sizes = ({ setLoading }) => {
   const { setSizes } = useContext(CardContext);
   const [cSelected, setCSelected] = useState([]);
 
@@ -30,6 +30,7 @@ const Sizes = () => {
             active={cSelected.includes('xs')}
           ></Button>
           <span
+            onClick={() => setLoading(true)}
             className={
               cSelected.includes('xs')
                 ? 'checkbox-styles checked'
@@ -47,6 +48,7 @@ const Sizes = () => {
             active={cSelected.includes('s')}
           ></Button>
           <span
+            onClick={() => setLoading(true)}
             className={
               cSelected.includes('s')
                 ? 'checkbox-styles checked'
@@ -64,6 +66,7 @@ const Sizes = () => {
             active={cSelected.includes('m')}
           ></Button>
           <span
+            onClick={() => setLoading(true)}
             className={
               cSelected.includes('m')
                 ? 'checkbox-styles checked'
@@ -81,6 +84,7 @@ const Sizes = () => {
             active={cSelected.includes('ml')}
           ></Button>
           <span
+            onClick={() => setLoading(true)}
             className={
               cSelected.includes('ml')
                 ? 'checkbox-styles checked'
@@ -98,6 +102,7 @@ const Sizes = () => {
             active={cSelected.includes('l')}
           ></Button>
           <span
+            onClick={() => setLoading(true)}
             className={
               cSelected.includes('l')
                 ? 'checkbox-styles checked'
@@ -115,6 +120,7 @@ const Sizes = () => {
             active={cSelected.includes('xl')}
           ></Button>
           <span
+            onClick={() => setLoading(true)}
             className={
               cSelected.includes('xl')
                 ? 'checkbox-styles checked'
@@ -132,6 +138,7 @@ const Sizes = () => {
             active={cSelected.includes('xxl')}
           ></Button>
           <span
+            onClick={() => setLoading(true)}
             className={
               cSelected.includes('xxl')
                 ? 'checkbox-styles checked'
