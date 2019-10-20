@@ -8,7 +8,9 @@ class CardContextProvider extends Component {
     sizes: [],
     length: null,
     loading: false,
-
+    cartData: [],
+    totalProductsInCart: [],
+    subTotal: [],
     data: [
       {
         title: 'Cat Tee Black T-Shirt',
@@ -65,32 +67,28 @@ class CardContextProvider extends Component {
         cost: 27.3,
         size: 'l',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/2.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 19.2,
         size: 'l',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/1.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 31.2,
         size: 'l',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/3.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 77.7,
         size: 'm',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/6.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
@@ -105,80 +103,70 @@ class CardContextProvider extends Component {
         cost: 34.2,
         size: 'm',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/4.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 97.3,
         size: 'ml',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/5.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 150.3,
         size: 'ml',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/4.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 20.3,
         size: 'ml',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/3.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 34.3,
         size: 'xs',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/1.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 36.3,
         size: 'xs',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/5.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 55.3,
         size: 'xs',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/2.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 3.2,
         size: 'xs',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/6.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 8.3,
         size: 'xxl',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/3.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
         cost: 5.3,
         size: 'xxl',
         id: uuid(),
-        imageUrl:
-          'https://rawcdn.githack.com/jeffersonRibeiro/react-shopping-cart/ccf64841ddfdfedfce9821b2b7ff2c8075afb17c/src/static/products/10686354557628304_1.jpg'
+        imageUrl: '/assets/2.jpg'
       },
       {
         title: 'Cat Tee Black T-Shirt',
@@ -216,8 +204,36 @@ class CardContextProvider extends Component {
     });
   };
 
+  handleCartData = cardValues => {
+    const { cartData } = this.state;
+    const productInCart = cartData.length
+      ? cartData.find(x => x.id === cardValues.id)
+      : null;
+
+    if (productInCart) {
+      this.setState({
+        cartData: cartData.map(product => {
+          if (product.id === productInCart.id) {
+            return {
+              ...product,
+              quantity: product.quantity + 1
+            };
+          }
+          return product;
+        })
+      });
+    } else {
+      this.setState({
+        cartData: [...cartData, { ...cardValues, quantity: 1 }]
+      });
+    }
+    this.setState({
+      totalProductsInCart: [...this.state.totalProductsInCart, 1],
+      subTotal: [...this.state.subTotal, cardValues.cost]
+    });
+  };
+
   render() {
-    console.log(this.state.data);
     return (
       <CardContext.Provider
         value={{
@@ -225,7 +241,11 @@ class CardContextProvider extends Component {
           setSizes: this.setSizes,
           sizes: this.state.sizes,
           length: this.state.length,
-          setOrderedData: this.setOrderedData
+          setOrderedData: this.setOrderedData,
+          handleCartData: this.handleCartData,
+          cartData: this.state.cartData,
+          totalProductsInCart: this.state.totalProductsInCart,
+          subTotal: this.state.subTotal
         }}
       >
         {this.props.children}

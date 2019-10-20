@@ -14,7 +14,7 @@ import './index.css';
 import { CardContext } from '../../context/CardContext';
 
 const CardListItem = ({ loading, setLoading }) => {
-  const { cards, sizes } = useContext(CardContext);
+  const { cards, sizes, handleCartData } = useContext(CardContext);
 
   const fetchData = () => {
     if (loading) {
@@ -56,7 +56,12 @@ const CardListItem = ({ loading, setLoading }) => {
                             <CardText className='card-txt'>
                               $ {card.cost}
                             </CardText>
-                            <button className='card-btn'>Add to cart</button>
+                            <button
+                              onClick={() => handleCartData(card)}
+                              className='card-btn'
+                            >
+                              Add to cart
+                            </button>
                           </CardBody>
                         </Card>
                       </Col>
@@ -80,7 +85,12 @@ const CardListItem = ({ loading, setLoading }) => {
                           <CardText className='card-txt'>
                             $ {card.cost}
                           </CardText>
-                          <button className='card-btn'>Add to cart</button>
+                          <button
+                            onClick={() => handleCartData(card)}
+                            className='card-btn'
+                          >
+                            Add to cart
+                          </button>
                         </CardBody>
                       </Card>
                     </Col>

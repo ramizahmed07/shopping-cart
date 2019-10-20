@@ -9,7 +9,7 @@ import {
 import './index.css';
 import { CardContext } from '../../../context/CardContext';
 
-const Prices = () => {
+const Prices = ({ setLoading }) => {
   const { setOrderedData } = useContext(CardContext);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -24,13 +24,19 @@ const Prices = () => {
         </DropdownToggle>
         <DropdownMenu className='drop-down-menu'>
           <DropdownItem
-            onClick={() => setOrderedData('ascending')}
+            onClick={() => {
+              setOrderedData('ascending');
+              setLoading(true);
+            }}
             className='drop-down-item'
           >
             Lowest to highest
           </DropdownItem>
           <DropdownItem
-            onClick={() => setOrderedData('descending')}
+            onClick={() => {
+              setOrderedData('descending');
+              setLoading(true);
+            }}
             className='drop-down-item'
           >
             Highest to lowest
