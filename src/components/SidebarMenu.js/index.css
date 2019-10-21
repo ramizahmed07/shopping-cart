@@ -143,6 +143,23 @@
   background: #363333;
 }
 
+.remove-btn {
+  background: transparent;
+  color: white;
+  font-weight: 1;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border: none;
+  position: absolute;
+  right: 50px;
+  top: 5px;
+}
+
+.remove-btn:focus {
+  outline: none;
+}
+
 .list-item {
   background: #363333 !important;
   border: 1px solid #272121 !important;
@@ -166,6 +183,7 @@
 .list-item-details {
   float: left;
   margin-top: 10px;
+  text-align: left;
 }
 
 .list-item-size,

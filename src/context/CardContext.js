@@ -9,8 +9,7 @@ class CardContextProvider extends Component {
     length: null,
     loading: false,
     cartData: [],
-    totalProductsInCart: [],
-    subTotal: [],
+
     data: [
       {
         title: 'Cat Tee Black T-Shirt',
@@ -227,13 +226,17 @@ class CardContextProvider extends Component {
         cartData: [...cartData, { ...cardValues, quantity: 1 }]
       });
     }
+  };
+
+  removeProduct = id => {
+    const { cartData } = this.state;
     this.setState({
-      totalProductsInCart: [...this.state.totalProductsInCart, 1],
-      subTotal: [...this.state.subTotal, cardValues.cost]
+      cartData: cartData.filter(product => product.id !== id)
     });
   };
 
   render() {
+    console.log(this.state.cartData);
     return (
       <CardContext.Provider
         value={{
@@ -244,8 +247,8 @@ class CardContextProvider extends Component {
           setOrderedData: this.setOrderedData,
           handleCartData: this.handleCartData,
           cartData: this.state.cartData,
-          totalProductsInCart: this.state.totalProductsInCart,
-          subTotal: this.state.subTotal
+
+          removeProduct: this.removeProduct
         }}
       >
         {this.props.children}

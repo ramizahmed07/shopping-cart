@@ -5,24 +5,22 @@ import './index.css';
 import { CardContext } from '../../context/CardContext';
 
 const SidebarMenu = () => {
-  const { cartData, totalProductsInCart, subTotal } = useContext(CardContext);
+  const { cartData, removeProduct } = useContext(CardContext);
   const [isOpen, open] = useState(false);
 
   const toggleMenu = () => {
     open(!isOpen);
   };
 
-  const subTotalOfProducts =
+  const total = cartData.map(product => product.quantity);
+  const totalNumber = total.length > 0 && total.reduce((a, c) => a + c);
+  const subTotal = cartData.map(product => product.cost * product.quantity);
+  const subTotalNumber =
     subTotal.length > 0 && subTotal.reduce((a, c) => a + c);
-
-  const total =
-    totalProductsInCart.length > 0
-      ? totalProductsInCart.reduce((a, c) => a + c)
-      : 0;
 
   const popup = () => {
     if (subTotal.length !== 0) {
-      alert(subTotalOfProducts);
+      alert(subTotalNumber);
     } else {
       alert('Add some products in the cart');
     }
@@ -34,7 +32,7 @@ const SidebarMenu = () => {
         <span></span>
         <span></span>
         <span></span>
-        {total !== 0 && <span className='total'>{total}</span>}
+        {totalNumber > 0 && <span className='total'>{totalNumber}</span>}
       </div>
       <div
         className={isOpen ? 'sidebar-menu sidebar-menu-open' : 'sidebar-menu'}
@@ -42,7 +40,7 @@ const SidebarMenu = () => {
         <div className='sidebar-menu-header'>
           <div className='cart'>
             <i className='cart-icon icon ion-md-cart'>
-              <span className='total'>{total}</span>
+              {totalNumber > 0 && <span className='total'>{totalNumber}</span>}
             </i>
 
             <span className='cart-text'>Cart</span>
@@ -53,6 +51,12 @@ const SidebarMenu = () => {
             {cartData.length > 0 ? (
               cartData.map(product => (
                 <ListGroupItem key={product.id} className='list-item'>
+                  <button
+                    onClick={() => removeProduct(product.id)}
+                    className='remove-btn'
+                  >
+                    X
+                  </button>
                   <img
                     src={product.imageUrl}
                     alt='product-img'
@@ -90,7 +94,7 @@ const SidebarMenu = () => {
           <div className='sub-total'>
             <span className='sub-total-text'>SUBTOTAL</span>
             <span className='sub-total-number'>
-              $ {Math.round(subTotalOfProducts * 100) / 100}
+              $ {Math.round(subTotalNumber * 100) / 100}
             </span>
           </div>
           <button onClick={popup} className='checkout-btn'>
