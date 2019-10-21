@@ -51,17 +51,17 @@ const SidebarMenu = () => {
             {cartData.length > 0 ? (
               cartData.map(product => (
                 <ListGroupItem key={product.id} className='list-item'>
+                  <img
+                    src={product.imageUrl}
+                    alt='product-img'
+                    className='list-item-image'
+                  />
                   <button
                     onClick={() => removeProduct(product.id)}
                     className='remove-btn'
                   >
                     X
                   </button>
-                  <img
-                    src={product.imageUrl}
-                    alt='product-img'
-                    className='list-item-image'
-                  />
                   <p className='list-item-details'>
                     <span className='list-item-title'>{product.title}</span>
                     <br />

@@ -160,6 +160,10 @@
   outline: none;
 }
 
+.remove-btn:hover .list-item-cost {
+  background: orange;
+}
+
 .list-item {
   background: #363333 !important;
   border: 1px solid #272121 !important;

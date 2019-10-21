@@ -13,8 +13,11 @@
   border: 1px solid #d2d2 !important;
 }
 
-.card:hover .card-btn {
-  background: yellow;
+.remove-btn:hover + p > .list-item-cost,
+.remove-btn:hover + p > .list-item-title,
+.remove-btn:hover + p > .list-item-size,
+.remove-btn:hover + p > .list-item-quantity {
+  text-decoration: line-through;
 }
 
 .card-img {
