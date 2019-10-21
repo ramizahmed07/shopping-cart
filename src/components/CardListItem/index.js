@@ -96,6 +96,7 @@ const CardListItem = ({ loading, setLoading }) => {
                     </Col>
                   );
                 }
+                return [];
               })}
           </Row>
         </Container>

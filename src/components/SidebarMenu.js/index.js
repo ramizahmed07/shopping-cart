@@ -28,7 +28,10 @@ const SidebarMenu = () => {
 
   return (
     <Fragment>
-      <div onClick={toggleMenu} class={isOpen ? 'hamburger open' : 'hamburger'}>
+      <div
+        onClick={toggleMenu}
+        className={isOpen ? 'hamburger open' : 'hamburger'}
+      >
         <span></span>
         <span></span>
         <span></span>

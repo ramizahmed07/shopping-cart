@@ -192,7 +192,7 @@ class CardContextProvider extends Component {
 
   setSizes = size => {
     let length = 0;
-    this.state.data.map(card => {
+    this.state.data.forEach(card => {
       if (size.includes(card.size)) {
         length++;
       }
@@ -236,7 +236,6 @@ class CardContextProvider extends Component {
   };
 
   render() {
-    console.log(this.state.cartData);
     return (
       <CardContext.Provider
         value={{
