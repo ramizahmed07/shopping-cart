@@ -1,6 +1,7 @@
 import React, { useContext, Fragment } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { Spinner } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import {
   Card,
   CardImg,
@@ -48,6 +49,9 @@ const CardListItem = ({ loading, setLoading }) => {
                             src={card.imageUrl}
                             alt='Card image cap'
                           />
+                          <Link to={`/edit/${card.id}`}>
+                            <i className='edit-button icon ion-md-create'></i>
+                          </Link>
                           <CardBody className='card-body'>
                             <CardTitle className='card-title'>
                               {card.title}
@@ -77,6 +81,9 @@ const CardListItem = ({ loading, setLoading }) => {
                           src={card.imageUrl}
                           alt='Card image cap'
                         />
+                        <Link to={`/edit/${card.id}`}>
+                          <i className='edit-button icon ion-md-create'></i>
+                        </Link>
                         <CardBody className='card-body'>
                           <CardTitle className='card-title'>
                             {card.title}

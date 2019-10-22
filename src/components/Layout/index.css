@@ -1,0 +1,16 @@
+.add-button {
+  text-align: center;
+  background: black;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 28px;
+  border-radius: 50%;
+  margin-top: 10px;
+  display: block;
+  transition: all 0.8s;
+}
+
+.add-icon {
+  color: white;
+}
