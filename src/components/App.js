@@ -12,14 +12,12 @@ const App = () => {
       <Route
         render={({ location }) => (
           <TransitionGroup>
-            <CSSTransition key={location.key} timeout={1000} classNames='fade'>
+            <CSSTransition key={location.key} timeout={700} classNames='fade'>
               <Switch location={location}>
                 <Route path='/' exact component={Layout} />
 
-                <div className='page'>
-                  <Route path='/new' exact component={ProductCreate} />
-                  <Route path='/edit/:id' exact component={ProductEdit} />
-                </div>
+                <Route path='/new' exact component={ProductCreate} />
+                <Route path='/edit/:id' exact component={ProductEdit} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>
