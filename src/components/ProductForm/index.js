@@ -59,6 +59,7 @@ class ProductForm extends Component {
           <FormGroup className='form-group'>
             <Label>Title</Label>
             <Input
+              style={{ height: '40px' }}
               value={this.state.title}
               onChange={this.handleChange}
               className='input-fields'

@@ -2,17 +2,17 @@
   width: 70px;
   height: 70px;
   cursor: pointer;
-  position: relative;
+  position: fixed;
   z-index: 9999999999;
-  right: -95%;
+  right: 1%;
   transition: all 0.4s;
   background: black;
   border-radius: 50%;
-  top: -41px;
+  top: 10px;
 }
 
 .open {
-  right: -65%;
+  right: 31%;
   transition: all 0.4s;
 }
 
