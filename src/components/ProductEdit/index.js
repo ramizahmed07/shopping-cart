@@ -1,27 +1,34 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { CardContext } from '../../context/CardContext';
 import ProductForm from '../ProductForm';
 
 const ProductEdit = ({
+  history,
   match: {
     params: { id }
   }
 }) => {
-  const { cards } = useContext(CardContext);
+  const productId = parseInt(id);
+  const { editProduct, cards } = useContext(CardContext);
 
-  useEffect(() => {
-    const fetchedProduct = cards.find(x => x.id === parseInt(id));
-  });
-  const fetchedProduct = cards.find(x => x.id === parseInt(id));
+  const fetchedProduct = cards.find(x => x.id === productId);
+
+  const onSubmit = formValues => {
+    editProduct({ ...formValues, productId });
+    history.push('/');
+  };
 
   return (
     <div>
+      <h3 className='form-title'>Edit a product</h3>
+
       <ProductForm
+        onSubmit={onSubmit}
         fetchedProduct={{
-          title: fetchedProduct.title,
-          cost: fetchedProduct.cost,
-          size: fetchedProduct.size,
-          imageUrl: fetchedProduct.imageUrl
+          title: fetchedProduct && fetchedProduct.title,
+          cost: fetchedProduct && fetchedProduct.cost,
+          size: fetchedProduct && fetchedProduct.size,
+          imageUrl: fetchedProduct && fetchedProduct.imageUrl
         }}
       />
     </div>

@@ -12,6 +12,8 @@ const ProductCreate = ({ history }) => {
   };
   return (
     <div>
+      <h3 className='form-title'>Create a product</h3>
+
       <ProductForm onSubmit={onSubmit} />
     </div>
   );

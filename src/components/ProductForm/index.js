@@ -6,11 +6,23 @@ import './index.css';
 class ProductForm extends Component {
   state = {
     title: '',
-    cost: null,
+    cost: '',
     size: '',
-    imageUrl: '',
-    file: ''
+    imageUrl: ''
   };
+
+  componentDidMount() {
+    if (this.props.fetchedProduct) {
+      const { title, cost, size, imageUrl } = this.props.fetchedProduct;
+
+      this.setState({
+        title,
+        cost,
+        size,
+        imageUrl
+      });
+    }
+  }
 
   handleChange = event => {
     this.setState({
@@ -35,14 +47,14 @@ class ProductForm extends Component {
       title: '',
       cost: null,
       size: '',
-      imageUrl: ''
+      imageUrl: '',
+      file: ''
     });
   };
 
   render() {
     return (
       <Fragment>
-        <h3 className='form-title'>Create a product</h3>
         <Form onSubmit={this.handleSubmit} className='form'>
           <FormGroup className='form-group'>
             <Label>Title</Label>
@@ -69,19 +81,19 @@ class ProductForm extends Component {
           <FormGroup>
             <Label>Size</Label>
             <Input
-              value='{this.state.size}'
+              value={this.state.size}
               onChange={this.handleChange}
               className='input-fields'
               type='select'
               name='size'
             >
-              <option value='s'>S</option>
-              <option value='l'>L</option>
-              <option value='m'>M</option>
-              <option value='ml'>ML</option>
-              <option value='xl'>XL</option>
-              <option value='xs'>XS</option>
-              <option value='xxl'>XXL</option>
+              <option>s</option>
+              <option>l</option>
+              <option>m</option>
+              <option>ml</option>
+              <option>xl</option>
+              <option>xs</option>
+              <option>xxl</option>
             </Input>
           </FormGroup>
           <FormGroup>

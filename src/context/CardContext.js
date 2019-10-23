@@ -240,6 +240,21 @@ class CardContextProvider extends Component {
     });
   };
 
+  editProduct = product => {
+    const data = this.state.data.map(item => {
+      if (item.id === product.productId) {
+        return {
+          ...product,
+          id: product.productId
+        };
+      }
+      return { ...item };
+    });
+    this.setState({
+      data
+    });
+  };
+
   render() {
     return (
       <CardContext.Provider
@@ -252,7 +267,8 @@ class CardContextProvider extends Component {
           handleCartData: this.handleCartData,
           cartData: this.state.cartData,
           createProduct: this.createProduct,
-          removeProduct: this.removeProduct
+          removeProduct: this.removeProduct,
+          editProduct: this.editProduct
         }}
       >
         {this.props.children}

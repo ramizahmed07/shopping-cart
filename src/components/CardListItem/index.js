@@ -16,7 +16,6 @@ import { CardContext } from '../../context/CardContext';
 
 const CardListItem = ({ loading, setLoading }) => {
   const { cards, sizes, handleCartData } = useContext(CardContext);
-
   const fetchData = () => {
     if (loading) {
       setTimeout(() => {
